@@ -39,7 +39,7 @@ namespace WinRemoteDesktop
 
             //Rectangle ScreenArea = Screen.PrimaryScreen.Bounds;
             // 给axMsRdpc取个名字
-            string _axMsRdpcName = string.Format("axMsRdpc_{0}", ServerIps[0].Replace(".", ""));
+            string _axMsRdpcName = string.Format("axMsRdpc_{0}_{1}", ServerIps[0].Replace(".", ""), ServerIps.Length == 1 ? 3389 : Convert.ToInt32(ServerIps[1]));
             if (axMsRdpcArray.Contains(_axMsRdpcName))
             {
                 Global.WinMessage("此远程已经连接，请勿重复连接！"); return;
